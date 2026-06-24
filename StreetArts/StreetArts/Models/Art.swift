@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct Art : Identifiable {
-let id = UUID()
+    let id = UUID()
 
-var image : String
-var title : String
-var detail : String
+    let image : String
+    let title : String
+    let detail : String
+        
+    let type : Types
+    let condition : Conditions
+
+    let date : Date
+    let authorName : String
+    let authorUserName : String
+    let adresse : String
+    let borough : String
+    let city : String
+    let latitude : Double
+    let longitude : Double
     
-var type : Types
-var condition : Conditions
-
-var date : Date
-var auteurName : String
-var auteurUserName : String
-var adresse : String
-var borough : String
-var city : String
-var latitude : Double
-var longitude : Double
-
 }
 
 enum Types : String , CaseIterable {
@@ -38,7 +38,7 @@ enum Types : String , CaseIterable {
 }
 
 enum Conditions : String , CaseIterable {
-case bad = "Mauvaise"
-case good = "Bonne"
-case excellent = "Excellent"
+    case bad = "Mauvaise"
+    case good = "Bonne"
+    case excellent = "Excellent"
 }
