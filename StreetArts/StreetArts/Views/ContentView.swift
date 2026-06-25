@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @Binding var selectedType: Types?
+    let authors: [Author]
+
     @State private var selection: Int = 1
 
     var body: some View {
@@ -33,7 +34,7 @@ struct ContentView: View {
 
                 // Authors
                 NavigationStack {
-                    ArtAuthorListView()
+                    ArtAuthorsGridView(authors: authors)
                 }
                 .tabItem {
                     Label(
@@ -50,5 +51,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(selectedType: .constant(.mosaiques))
+    ContentView(
+        authors: Author.mocks
+    )
 }

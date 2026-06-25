@@ -11,7 +11,11 @@ struct ArtListMapContentView: View {
 
     @State var selectedPicker: SelectionOptions = .liste
     @State private var selectedType: Types?
-    @State var selectionColor: Int = 0
+
+    var filteredArts: [Art] {
+        guard let selectedType else { return Art.mocks }
+        return Art.mocks.filter { $0.type == selectedType }
+    }
 
     var body: some View {
         VStack {
@@ -65,7 +69,7 @@ struct ArtListMapContentView: View {
             )
         case .map:
             ArtMapContentView(
-                arts: Art.mocks
+                arts: filteredArts
             )
         }
     }

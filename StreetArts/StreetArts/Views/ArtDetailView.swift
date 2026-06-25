@@ -40,7 +40,6 @@ struct ArtDetailView: View {
 
         }
         .ignoresSafeArea()
-        .padding(.bottom, 16)
 
         Spacer()
     }

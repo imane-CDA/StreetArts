@@ -16,22 +16,16 @@ struct ArtMapContentView: View {
     @State private var selectedArt: Art?
 
     // 2
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(
-            latitude: 46.8,
-            longitude: 2
-        ),
-        span: MKCoordinateSpan(
-            latitudeDelta: 10,
-            longitudeDelta: 10
+    @State private var position: MapCameraPosition = .region(
+        MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: 46.8, longitude: 2),
+            span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
         )
     )
 
     var body: some View {
         // 3 + (création de la propriété calculée dans la struct) + 4
-        Map(
-            initialPosition: .region(region)
-        ) {
+        Map(position: $position) {
             ForEach(arts) { art in
 
                 // Marker (annotation sinon pas cliquable)

@@ -11,9 +11,9 @@ import SwiftUI
 struct StreetArtsApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                ContentView(selectedType: .constant(.calligraphie))
-            }
+                ContentView(
+                    authors : Author.mocks,
+                )
         }
     }
 }
