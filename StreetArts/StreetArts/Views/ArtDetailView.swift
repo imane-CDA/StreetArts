@@ -28,12 +28,9 @@ struct ArtDetailView: View {
                     .font(.title2.bold())
                     .foregroundStyle(.mainOrange)
 
-                Text(art.detail)
-                    .font(.footnote)
-                    .fontWeight(.regular)
-                    .padding(.trailing, 4)
+                ArtDetaiDescriptionOneView(art: art)
 
-                ArtDetailRowView(art: art)
+                ArtDetaiDescriptionTwoView(art: art)
 
                 ArtDetailMapView(art: art)
                     .frame(height: 157)
@@ -43,12 +40,14 @@ struct ArtDetailView: View {
 
         }
         .ignoresSafeArea()
+        .padding(.bottom, 16)
 
         Spacer()
-
     }
 }
 
 #Preview {
-    ArtDetailView(art: Art.mock)
+    ArtDetailView(
+        art: Art.mock
+    )
 }

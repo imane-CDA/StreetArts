@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArtDetailRowView: View {
+struct ArtDetaiDescriptionTwoView: View {
 
     let art: Art
 
@@ -69,7 +69,7 @@ struct ArtDetailRowView: View {
 }
 
 #Preview {
-    ArtDetailRowView(
+    ArtDetaiDescriptionTwoView(
         art: Art.mock
     )
 }

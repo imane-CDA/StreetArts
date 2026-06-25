@@ -5,9 +5,9 @@
 //  Created by Apprenant131 on 22/06/2026.
 //
 
-import SwiftUI
 // pour utiliser les cartes Apple (Map, coordonnées GPS, etc.)
 import MapKit
+import SwiftUI
 
 struct ArtDetailMapView: View {
 
@@ -60,27 +60,27 @@ struct ArtDetailMapView: View {
         // liée à position (si la position change --> la carte se met à jour)
         Map(position: $position) {
 
-                // J’ajoute un point sur la carte :
-                // art.title --> label du pin
-                // coordinate --> position GPS du pin
-                Annotation(art.title, coordinate: coordinate) {
-                        Image(art.image)
-                            .scaledToFill()
-                            .frame(width: 48, height: 48)
-                            .clipShape(Circle())
-                            .overlay(
-                                Circle()
-                                    .stroke(.primary, lineWidth: 3)
-                            )
-                            .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 6)
-                    
-                        Image(systemName: "triangle.fill")
-                            .font(.system(size: 8))
-                            .foregroundStyle(.primary)
-                            .rotationEffect(.degrees(180))
-                            .offset(y: -4)
+            // J’ajoute un point sur la carte :
+            // art.title --> label du pin
+            // coordinate --> position GPS du pin
+            Annotation(art.title, coordinate: coordinate) {
+                Image(art.image)
+                    .scaledToFill()
+                    .frame(width: 48, height: 48)
+                    .clipShape(Circle())
+                    .overlay(
+                        Circle()
+                            .stroke(.primary, lineWidth: 3)
+                    )
+                    .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 6)
 
-                }
+                Image(systemName: "triangle.fill")
+                    .font(.system(size: 8))
+                    .foregroundStyle(.primary)
+                    .rotationEffect(.degrees(180))
+                    .offset(y: -4)
+
+            }
         }
     }
 }

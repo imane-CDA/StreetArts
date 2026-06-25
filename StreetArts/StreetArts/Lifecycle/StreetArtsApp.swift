@@ -11,7 +11,9 @@ import SwiftUI
 struct StreetArtsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(selectedType: .constant(.calligraphie))
+            NavigationStack {
+                ContentView(selectedType: .constant(.calligraphie))
+            }
         }
     }
 }
