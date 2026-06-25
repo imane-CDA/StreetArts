@@ -30,7 +30,6 @@ struct ArtDetailSheetView: View {
                 VStack(alignment: .leading, spacing: 18) {
 
                     ArtDetaiDescriptionOneView(art: art)
-                        .fixedSize(horizontal: false, vertical: true)
                         .padding()
 
                 }

@@ -11,6 +11,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		EE4DEE0A2FED7EF700F2CEF0 /* Screenshots */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		EEE3F2F02FE932DA0007147F /* StreetArts */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = StreetArts;
@@ -32,6 +37,7 @@
 		EEE3F2E52FE932DA0007147F = {
 			isa = PBXGroup;
 			children = (
+				EE4DEE0A2FED7EF700F2CEF0 /* Screenshots */,
 				EEE3F2F02FE932DA0007147F /* StreetArts */,
 				EEE3F2EF2FE932DA0007147F /* Products */,
 			);
@@ -61,6 +67,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				EE4DEE0A2FED7EF700F2CEF0 /* Screenshots */,
 				EEE3F2F02FE932DA0007147F /* StreetArts */,
 			);
 			name = StreetArts;
