@@ -30,7 +30,7 @@ Application iOS développée en SwiftUI lors de ma formation en tant que Concept
 ### Détail d'une œuvre
 
 <p align="center">
-  <img src="Screenshots/detail-oeuvres.png" width="250"/>
+  <img src="Screenshots/detail-oeuvre.png" width="250"/>
 </p>
 
 ### Carte interactive
