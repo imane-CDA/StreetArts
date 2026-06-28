@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct ArtListMapContentView: View {
+struct ListMapView: View {
 
-    @State var selectedPicker: SelectionOptions = .liste
+    @State private var selectedPicker: SelectionOptions = .liste
     @State private var selectedType: Types?
+    @State private var mission: Mission = Mission.mock
 
     var filteredArts: [Art] {
-        guard let selectedType else { return Art.mocks }
-        return Art.mocks.filter { $0.type == selectedType }
+        let arts = Art.mocks
+        guard let selectedType else { return arts }
+        return arts.filter { $0.type == selectedType }
     }
 
     var body: some View {
@@ -62,14 +64,16 @@ struct ArtListMapContentView: View {
     var destination: some View {
         switch selectedPicker {
         case .liste:
-            ArtListView(
-                arts: Art.mocks,
+            ListListMapView(
+                arts: filteredArts,
+                mission: $mission,
                 selectedType: $selectedType,
                 selectedPicker: $selectedPicker
             )
         case .map:
-            ArtMapContentView(
-                arts: filteredArts
+            MapListMapView(
+                arts: filteredArts,
+                mission: $mission
             )
         }
     }
@@ -83,8 +87,6 @@ enum SelectionOptions: String, CaseIterable {
 
 #Preview {
     NavigationStack {
-        ArtListMapContentView(
-            selectedPicker: .liste
-        )
+        ListMapView()
     }
 }

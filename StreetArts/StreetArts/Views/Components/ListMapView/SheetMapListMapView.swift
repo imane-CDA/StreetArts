@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ArtDetailSheetView: View {
-
-    @Environment(\.dismiss) private var dismiss
+struct SheetMapListMapView: View {
 
     let art: Art
+    @Binding var mission: Mission  // si tu utilises mission ici
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
 
@@ -22,20 +22,16 @@ struct ArtDetailSheetView: View {
                 Image(art.image)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 405)
                     .frame(height: 179)
                     .opacity(0.6)
                     .clipped()
 
                 VStack(alignment: .leading, spacing: 18) {
-
-                    ArtDetaiDescriptionOneView(art: art)
+                    DescriptionOneArtDetaiView(art: art)
                         .padding()
-
                 }
 
                 Spacer()
-
             }
 
             .toolbar {
@@ -45,31 +41,24 @@ struct ArtDetailSheetView: View {
                         dismiss()
                     } label: {
                         Image(systemName: "xmark")
-                            .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.secondText)
-                    }.tint(.backgroundGray)
-                        .buttonStyle(.borderedProminent)
+                    }
                 }
 
-                ToolbarItem(placement: .automatic) {
-                    HStack(alignment: .center) {
-                        Text(art.title)
-                            .font(.headline)
-                            .frame(maxWidth: .infinity)
-                    }
+                ToolbarItem(placement: .principal) {
+                    Text(art.title)
+                        .font(.headline)
                 }
 
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
-                        ArtDetailView(art: art)
+                        ArtDetailView(
+                            art: art,
+                            mission: $mission
+                        )
                     } label: {
                         Image(systemName: "arrow.right")
-                            .foregroundStyle(.white)
                     }
-                    .tint(.secondOrange)
-                    .buttonStyle(.borderedProminent)
                 }
-
             }
         }
     }
@@ -77,6 +66,9 @@ struct ArtDetailSheetView: View {
 
 #Preview {
     NavigationStack {
-        ArtDetailSheetView(art: Art.mock)
+        SheetMapListMapView(
+            art: Art.mock,
+            mission: .constant(Mission.mock)
+        )
     }
 }

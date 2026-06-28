@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArtAuthorImageListView: View {
+struct ImageAuthorView: View {
 
     let author: Author
 
@@ -15,9 +15,9 @@ struct ArtAuthorImageListView: View {
 
         VStack {
 
-            if let imagetest = author.image {
+            if let imageNotNil = author.image {
 
-                Image(imagetest)
+                Image(imageNotNil)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 65, height: 65)
@@ -38,5 +38,5 @@ struct ArtAuthorImageListView: View {
 }
 
 #Preview {
-    ArtAuthorImageListView(author: Author.mock)
+    ImageAuthorView(author: Author.mock)
 }

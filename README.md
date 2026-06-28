@@ -24,7 +24,7 @@ Application iOS développée en SwiftUI lors de ma formation en tant que Concept
 ## Liste des œuvres
 
 <p align="center">
-  <img src="Screenshots/liste-oeuvres.png" width="250"/>
+  <img src="/Screenshots/liste-oeuvres.png" width="250"/>
 </p>
 
 ### Détail d'une œuvre

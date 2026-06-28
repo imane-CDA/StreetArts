@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArtRowListView: View {
+struct RowListListMapView: View {
 
     let art: Art
 
@@ -43,5 +43,5 @@ struct ArtRowListView: View {
 }
 
 #Preview {
-    ArtRowListView(art: Art.mock)
+    RowListListMapView(art: Art.mock)
 }

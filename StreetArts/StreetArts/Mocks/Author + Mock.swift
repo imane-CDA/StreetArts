@@ -11,7 +11,8 @@ extension Author {
 
     static let mock = Author(
         image: nil,
-        name: "KAN DMV",
+        authorName: "KAN",
+        authorUserName : "DMV",
         age: 49,
         origin: "France",
         style: .pointillisme,
@@ -21,7 +22,8 @@ extension Author {
     static let mocks = [
         Author(
             image: nil,
-            name: "KAN DMV",
+            authorName: "KAN",
+            authorUserName : "DMV",
             age: 49,
             origin: "France",
             style: .pointillisme,
@@ -29,7 +31,8 @@ extension Author {
         ),
         Author(
             image: "kitsuneJolene",
-            name: "Kitsune Jolene",
+            authorName: "Kitsune",
+            authorUserName : "Jolene",
             age: 34,
             origin: "Belgique",
             style: .mural,
@@ -37,7 +40,8 @@ extension Author {
         ),
         Author(
             image: "aero",
-            name: "Aero",
+            authorName: "Aero",
+            authorUserName : nil,
             age: nil,
             origin: "France",
             style: .aerographe,
@@ -45,7 +49,8 @@ extension Author {
         ),
         Author(
             image: "sethGlobepainter",
-            name: "Seth Globepainter",
+            authorName: "Seth",
+            authorUserName: "Globepainter",
             age: 54,
             origin: "France",
             style: .globePainter,
@@ -53,7 +58,8 @@ extension Author {
         ),
         Author(
             image: "jdl",
-            name: "JDL",
+            authorName: "JDL",
+            authorUserName: nil,
             age: 54,
             origin: "France",
             style: .mural,
@@ -61,7 +67,8 @@ extension Author {
         ),
         Author(
             image: "shepardFairey",
-            name: "Shepard Fairey",
+            authorName: "Shepard",
+            authorUserName: "Fairey",
             age: 56,
             origin: "USA",
             style: .mural,

@@ -9,7 +9,7 @@
 import MapKit
 import SwiftUI
 
-struct ArtDetailMapView: View {
+struct MapArtDetailView: View {
 
     let art: Art
 
@@ -81,10 +81,11 @@ struct ArtDetailMapView: View {
                     .offset(y: -4)
 
             }
-        }
+        } .frame(height: 157)
+          .clipShape(RoundedRectangle(cornerRadius: 26))
     }
 }
 
 #Preview {
-    ArtDetailMapView(art: Art.mock)
+    MapArtDetailView(art: Art.mock)
 }

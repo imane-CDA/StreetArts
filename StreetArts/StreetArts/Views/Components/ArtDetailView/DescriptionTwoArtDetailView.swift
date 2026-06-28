@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArtDetaiDescriptionTwoView: View {
+struct DescriptionTwoArtDetaiView: View {
 
     let art: Art
 
@@ -44,8 +44,8 @@ struct ArtDetaiDescriptionTwoView: View {
                 Text("Auteur : ")
                     .bold()
 
-                Text("\(art.authorName.uppercased()) ")
-                Text("\(art.authorUserName.uppercased())")
+                Text("\(art.author.authorName.uppercased()) ")
+                Text((art.author.authorUserName ?? "").uppercased())
             }
 
             // Localisation
@@ -69,7 +69,7 @@ struct ArtDetaiDescriptionTwoView: View {
 }
 
 #Preview {
-    ArtDetaiDescriptionTwoView(
+    DescriptionTwoArtDetaiView(
         art: Art.mock
     )
 }

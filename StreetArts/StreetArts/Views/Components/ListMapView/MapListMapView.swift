@@ -9,9 +9,11 @@
 import MapKit
 import SwiftUI
 
-struct ArtMapContentView: View {
+struct MapListMapView: View {
 
     let arts: [Art]
+
+    @Binding var mission: Mission
 
     @State private var selectedArt: Art?
 
@@ -53,14 +55,20 @@ struct ArtMapContentView: View {
                 }
             }
         }
-        .edgesIgnoringSafeArea(.all)
+        .ignoresSafeArea()
         // 4 sheet
         .sheet(item: $selectedArt) { art in
-            ArtDetailSheetView(art: art)
+            SheetMapListMapView(
+                art: art,
+                mission: $mission
+            )
         }
     }
 }
 
 #Preview {
-    ArtMapContentView(arts: Art.mocks)
+    MapListMapView(
+        arts: Art.mocks,
+        mission: .constant(Mission.mock)
+    )
 }

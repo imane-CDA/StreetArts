@@ -8,7 +8,10 @@
 import MapKit
 import SwiftUI
 
-struct Art: Identifiable {
+// Equatable : compare 2 arts -> Missions
+// Hashable : identifier rapidement dans Set
+struct Art: Identifiable, Equatable, Hashable {
+
     let id = UUID()
 
     let image: String
@@ -19,8 +22,9 @@ struct Art: Identifiable {
     let condition: Conditions
 
     let date: Date
-    let authorName: String
-    let authorUserName: String
+
+    let author: Author
+
     let adresse: String
     let borough: String
     let city: String
@@ -28,7 +32,10 @@ struct Art: Identifiable {
     let longitude: Double
 
     var coordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        CLLocationCoordinate2D(
+            latitude: latitude,
+            longitude: longitude
+        )
     }
 
 }

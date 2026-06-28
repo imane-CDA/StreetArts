@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArtAuthorButtonListView: View {
+struct ButtonAuthorView: View {
 
     let author: Author
 
@@ -25,11 +25,11 @@ struct ArtAuthorButtonListView: View {
 
                 )
 
-        }
+        }.padding(.top, 23)
 
     }
 }
 
 #Preview {
-    ArtAuthorButtonListView(author: Author.mock)
+    ButtonAuthorView(author: Author.mock)
 }

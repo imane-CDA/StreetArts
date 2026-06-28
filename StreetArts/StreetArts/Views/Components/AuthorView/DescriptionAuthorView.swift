@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArtAuthorDescriptionListView: View {
+struct DescriptionAuthorView: View {
 
     let author: Author
 
@@ -44,5 +44,5 @@ struct ArtAuthorDescriptionListView: View {
 }
 
 #Preview {
-    ArtAuthorDescriptionListView(author: Author.mock)
+    DescriptionAuthorView(author: Author.mock)
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 
+    let arts: [Art]
     let authors: [Author]
 
     @State private var selection: Int = 1
@@ -21,7 +22,7 @@ struct ContentView: View {
 
                 // Arts
                 NavigationStack {
-                    ArtListMapContentView()
+                    ListMapView()
                 }
                 .tabItem {
                     Label(
@@ -34,7 +35,7 @@ struct ContentView: View {
 
                 // Authors
                 NavigationStack {
-                    ArtAuthorsGridView(authors: authors)
+                    AuthorsView(authors: authors)
                 }
                 .tabItem {
                     Label(
@@ -44,14 +45,28 @@ struct ContentView: View {
                     )
                 }.tag(2)
 
-            }
-            .tint(.mainOrange)
+                
+                // Missions
+                NavigationStack {
+                    MissionView(arts: arts)
+                }
+                .tabItem {
+                    Label(
+                        "Missions",
+                        image: (selection == 3
+                            ? "star.circle.orange"
+                            : "star.circle.black")
+                    )
+                }.tag(3)
+                
+            } .tint(.mainOrange)
         }
     }
 }
 
 #Preview {
     ContentView(
+        arts: Art.mocks,
         authors: Author.mocks
     )
 }

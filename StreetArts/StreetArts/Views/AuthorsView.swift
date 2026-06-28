@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArtAuthorsGridView: View {
+struct AuthorsView: View {
 
     let authors: [Author]
 
@@ -26,17 +26,16 @@ struct ArtAuthorsGridView: View {
 
                     ForEach(authors) {
                         author in
-                        ArtAuthorCardView(author: author)
+                        CardAuthorView(author: author)
                     }
 
                 }.padding(.horizontal, 22)
 
             }
         }.background(Color(.backgroundGray))
-
     }
 }
 
 #Preview {
-    ArtAuthorsGridView(authors: Author.mocks)
+    AuthorsView(authors: Author.mocks)
 }

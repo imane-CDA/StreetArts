@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-struct ArtListView: View {
+struct ListListMapView: View {
 
     let arts: [Art]
-
+    
+    @Binding var mission: Mission
     @Binding var selectedType: Types?
     @Binding var selectedPicker: SelectionOptions
 
+    
     var filteredArts: [Art] {
         selectedType == nil ? arts : arts.filter { $0.type == selectedType }
     }
@@ -24,21 +26,23 @@ struct ArtListView: View {
 
             if filteredArts.isEmpty {
 
-                ArtEmptyListView()
+                EmptyListListMapView()
 
             } else {
 
                 List(filteredArts) { art in
                     NavigationLink {
                         ArtDetailView(
-                            art: art
+                            art: art,
+                            mission: $mission
                         )
                     } label: {
-                        ArtRowListView(art: art)
+                        RowListListMapView(art: art)
                     }
                 }
+                .listStyle(.plain)
+                .scrollContentBackground(.hidden)
                 .scrollIndicators(.hidden)
-
             }
         }
         .navigationTitle("Liste des Street arts")
@@ -48,8 +52,9 @@ struct ArtListView: View {
 
 #Preview {
     NavigationStack {
-        ArtListView(
+        ListListMapView(
             arts: Art.mocks,
+            mission: .constant(Mission.mock),
             selectedType: .constant(.calligraphie),
             selectedPicker: .constant(.liste)
         )

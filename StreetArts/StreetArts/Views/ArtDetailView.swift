@@ -11,30 +11,40 @@ struct ArtDetailView: View {
 
     let art: Art
 
+    @Binding var mission: Mission
+
+    var isDiscovered: Bool {
+        mission.discoveredArts.contains(art)
+    }
+
     var body: some View {
 
         VStack {
 
-            Image(art.image)
-                .resizable()
-                .scaledToFill()
-                .frame(height: 278)
-                .frame(width: 411)
-                .opacity(0.6)
-                .clipped()
+            ImageArtDetailView(art: art)
 
             VStack(alignment: .leading, spacing: 18) {
-                Text(art.title)
-                    .font(.title2.bold())
-                    .foregroundStyle(.mainOrange)
 
-                ArtDetaiDescriptionOneView(art: art)
+                HStack {
 
-                ArtDetaiDescriptionTwoView(art: art)
+                    TitleArtDetailView(art: art)
 
-                ArtDetailMapView(art: art)
-                    .frame(height: 157)
-                    .clipShape(RoundedRectangle(cornerRadius: 26))
+                    Spacer()
+
+                    ButtonArtDetailView(
+                        art: art,
+                        isDiscovered: isDiscovered,
+                        mission: $mission
+                    )
+                }
+
+                DescriptionOneArtDetaiView(art: art)
+
+                DescriptionTwoArtDetaiView(art: art)
+
+                MapArtDetailView(art: art)
+
+                SignedArtDetailView()
 
             }.padding()
 
@@ -47,6 +57,7 @@ struct ArtDetailView: View {
 
 #Preview {
     ArtDetailView(
-        art: Art.mock
+        art: Art.mock,
+        mission: .constant(Mission.mock)
     )
 }

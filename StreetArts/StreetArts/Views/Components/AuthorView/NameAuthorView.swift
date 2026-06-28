@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArtAuthorNameListView: View {
+struct NameAuthorView: View {
 
     let author: Author
 
@@ -15,13 +15,16 @@ struct ArtAuthorNameListView: View {
 
         VStack {
 
-            Text(author.name)
-                .font(.callout)
+            HStack {
+                Text(author.authorName)
+                Text(author.authorUserName ?? "")
+            }.font(.callout)
                 .foregroundStyle(.mainOrange).bold()
+            
         }
     }
 }
 
 #Preview {
-    ArtAuthorNameListView(author: Author.mock)
+    NameAuthorView(author: Author.mock)
 }

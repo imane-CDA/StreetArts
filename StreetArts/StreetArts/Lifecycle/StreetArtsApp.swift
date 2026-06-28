@@ -11,9 +11,7 @@ import SwiftUI
 struct StreetArtsApp: App {
     var body: some Scene {
         WindowGroup {
-                ContentView(
-                    authors : Author.mocks,
-                )
+            ContentView(arts: Art.mocks, authors: Author.mocks)
         }
     }
 }
