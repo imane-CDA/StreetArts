@@ -22,13 +22,12 @@ struct MissionCompletedView: View {
             ConfettiView()
 
             VStack(spacing: 20) {
+                    Spacer()
 
                 Text("Mission terminée !")
                     .font(.largeTitle.bold())
                     .multilineTextAlignment(.center)
                 
-                Spacer()
-
                 Text("Félicitation ! Vous avez découvert \(mission.discoveredArts.count) oeuvres urbaines")
                     .font(.headline)
                     .foregroundStyle(.secondText)
@@ -53,10 +52,10 @@ struct MissionCompletedView: View {
                         .background(Color.secondOrange)
                         .clipShape(Capsule())
                 }
-                .padding(.horizontal)
+                Spacer()
             }
-            .padding()
-        }
+            Spacer()    
+        } .background(Color.backgroundGray)
         
     }
 }
